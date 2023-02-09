@@ -5,7 +5,8 @@ class usuarios:
  def datos(self):
    miConexion = pymysql.connect( host='localhost', user= 'root', passwd='', db='nueva' )
    cur = miConexion.cursor()
-   cur.execute( "SELECT nombre, apellidos FROM usuarios" )
+  #  cur.execute( "SELECT nombre, apellidos FROM usuarios" )
+   cur.execute("SELECT * from usuarios")
    rows=cur.fetchall()
    miConexion.close()
    return json.dumps(rows)
